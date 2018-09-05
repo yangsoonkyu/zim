@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-16T14:02:21+09:00
+
+====== CSS ======
+Created 토요일 16 6월 2018 
+1. 맨위에 {% load staticfiles %}를 추가 하고
+  <head> 사이에 <link rel="stylesheet" href="{% static 'css/blog.css' %}"> 추가
+
+3. 부트스트랩을 설치하려면, .html파일 내 <head>에 이 링크를 넣어야 합니다.
+
+'<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">'
+'<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">'
+
+
+글꼴
+	'<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">'
+
+
+3. 정적파일 
+	 - 정적 파일은 CSS와 이미지 파일에 해당
+	 - 요청 내용에 따라 바뀌는 것이 아니기 때문에 모든 사용자들이 동일한 내용을 본다
+	 - 장고는 admin 앱에서 정적 파일을 어디서 찾아야하는지 이미 알고 있다
+ 
+	
+	"blog"앱 안에 static라는 새 폴더를 만드세요. 아래 순서대로 폴더와 파일을 만든다
+	   djangogirls
+		└─── blog
+			 └─── static
+				  └─── css
+					   └─── blog.css

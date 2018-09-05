@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-16T14:01:45+09:00
+
+====== HTML ======
+Created 토요일 16 6월 2018
+
+
+<h1>A heading</h1> - 큰 제목
+<h2>A sub-heading</h2> - 중 제목
+<h3>A sub-sub-heading</h3> - 소 제목... <h6>레벨까지 사용할 수 있습니다.
+<em>text</em>,<i>text</i> - 텍스트 기울기 (Italic)
+<strong>text</strong>,<b>text</b> - 텍스트를 두껍게(Bold)
+<br /> - 줄바꿈 (br은 스스로 닫히는 태그로 속성을 사용할 수 없습니다)
+<a href="http://djangogirls.org">link</a> - 하이퍼링크 걸기
+<ul><li>first item</li><li>second item</li></ul>- 목록 만들기 <ol> 숫자목록
+<div></div> - 페이지 섹션 나눔
+<sup></sup>,<sub></sub> 주석달기
+
+HTML for문
+
+	{% for post in posts %}
+	{{ post }}
+	{% endfor %}
+--------------------
+
+<div>
+	{% for post in posts %}
+	<div>
+		<p>published: {{ post.published_date }}</p>
+		<h1><a href="">{{ post.title }}</a></h1>
+		<p>{{ post.text|linebreaksbr }}</p> #  text|linebreaksbr은 행이 바뀌면 문단으로 변환하도록 하라는 의미
+	</div>
+	{% endfor %}

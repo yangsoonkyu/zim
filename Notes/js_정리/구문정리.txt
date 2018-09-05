@@ -1,0 +1,52 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-07-11T21:27:51+09:00
+
+====== 구문정리 ======
+Created 수요일 11 7월 2018
+
+
+반복문
+
+https://www.w3schools.com/js/js_loop_for.asp
+for( 초기값; 조건; 증감) {실행}
+for(var i=0; i<a.length; i++) {실행}
+
+
+
+https://www.w3schools.com/js/js_loop_while.asp
+while (조건) {실행}		조건이 참이면 코드블록을 반복실행한다. 
+	while (i < 10) {
+		text += "The number is " + i;
+		i++;
+	}
+	
+	
+https://www.w3schools.com/js/js_if_else.asp
+**조건문 if**
+if (조건) {실행}		조건이 참이면 코드블럭을 실행한다. 
+if (hour < 18) { greeting = "Good day"; }
+
+**조건문 else**
+if(조건) {			조건이 거짓일때 else 코드블럭 실행한다.
+	코드블럭 실행
+}else {
+	코드블럭 실행
+	}
+
+if (hour < 18) { 
+	greeting = "Good day";
+} else {
+	greeting = "Good evening";
+}
+
+
+**조건문 else if**
+
+if (time < 10) {
+	greeting = "Good morning";
+} else if (time < 20) {
+	greeting = "Good day";
+} else {
+	greeting = "Good evening";
+}

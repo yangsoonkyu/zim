@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-15T21:55:17+09:00
+
+====== URL연결 ======
+Created 금요일 15 6월 2018
+
+url은 http://127.0.0.1:8000/%EC%9D%98 형태로 이루어져있다  [[http://127.0.0.1:8000/%EC%9D%98|http://127.0.0.1]] 은 로컬서버 8000은 포트번호이다
+로컬서버의 8000번을 요청한다는 의미이다
+
+
+1. mysite/urls.py에서 추가로 입력한다
+
+		from django.conf.urls import url, include  #include 추가 작성
+		from django.contrib import admin
+		
+		urlpatterns = [
+			url(r'^admin/', admin.site.urls),
+			url(r'', include('blog.urls')),    #추가입력
+		]
+
+2. blog에 urls.py를 생성하고 입력한다.
+
+		from django.conf.urls import url
+		from . import views
+		
+		urlpatterns = [
+			url(r'^$', views.post_list, name='post_list'),
+		]
+
+3. blog\view로 이동 , 입력
+	
+	def post_list(request):
+		return render(request, 'blog/post_list.html', {})
+
+4. blog 폴더에 templates폴더를 생성하고 그 안에 blog폴더를 생성, 그 안에 post_list.html 를 만든다.

@@ -1,0 +1,59 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-07-14T17:04:15+09:00
+
+====== 2. 숫자 메서드 ======
+Created 토요일 14 7월 2018
+
+최대 15자리까지 정확하다.
+소수점의 최대수는 17이지만 정확하지 않다. 문제점 해결을 위해 10을 곱한후 계산 후 다시 나눈다 . 
+ex) var x = (0.2 * 10 + 0.1 * 10) / 10;       // x will be 0.3
+[[NaN]] 은 숫자가 아니다 (그러나 타입은 숫자 typeof [[NaN]] // "number" )
+Infinity 무한대 ( 양수중에 제일 큰수를 표현할때 쓴다)
+-infinity 음의 무한대 (음수중에 제일 큰수를 표현할때 쓴다)
+
+
+toStirng()		x.toString()			숫자를 문자열로 반환
+toExponential() 	x.toExponential()		지수표기법을 사용하여 숫자 반올림
+toFixed()		x.toFixed(2)			소수점 2자리까지만 반올림해서 나타낸다 
+toPrecision()		x.toPrecision(3)		숫자를 3자리까지만 나타낸다.
+valueOf()		x.tovalueOf()			숫자를 숫자로 [[반환...?한다..]]
+
+
+//Js 전역 메서드 (문자열을 파싱하고 숫자로 반환한다)//
+**Number() 공백을 허용하지 않는다.**
+Number(true);          // returns 1
+Number(false);         // returns 0
+Number("10");          // returns 10
+Number("  10");        // returns 10
+Number("10  ");        // returns 10
+__Number("10 20");       // returns NaN__ 
+Number("John");        // returns [[NaN]]
+
+**parseInt() 공백을 허용하고 첫번째 정수만 반환한다.**
+parseInt("10");         // returns 10
+__parseInt("10.33");      // returns 10__
+parseInt("10 20 30");   // returns 10
+parseInt("10 years");   // returns 10
+parseInt("years 10");   // returns NaN 
+
+**parseFloat() 공백을 허용하고 첫번째 숫자만 반환한다.**
+parseFloat("10");        // returns 10
+__parseFloat("10.33");     // returns 10.33__
+parseFloat("10 20 30");  // returns 10
+parseFloat("10 years");  // returns 10
+parseFloat("years 10");  // returns NaN
+
+
+
+--------------------
+
+isFinite () 값이 유한 수인지 확인합니다.
+isInteger () 값이 정수인가 어떤지를 판정합니다.
+isNaN () 값이 Number.NaN인지 확인합니다.
+isSafeInteger () 값이 안전한 정수인가 어떤지를 판정합니다.
+toExponential (x) 숫자를 지수 표기법으로 변환합니다.
+toFixed (x) 소수점 이하의 x 자리수로 숫자를 포맷합니다.
+toPrecision (x) 숫자를 x 길이로 포맷합니다.
+toString () 숫자를 문자열로 변환합니다.
+valueOf () 숫자의 프리미티브 값을 반환합니다.

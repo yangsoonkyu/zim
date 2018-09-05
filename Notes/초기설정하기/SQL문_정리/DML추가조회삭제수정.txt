@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-15T21:37:52+09:00
+
+====== DML추가조회삭제수정 ======
+Created 금요일 15 6월 2018
+
+간단정리 **추가,조회,삭제,수정**
+
+**SELECT** * **FROM** Person; **조회**
+
+**INSERT INTO** Person  **추가**
+-----예문----
+INSERT INTO Person (ID, Name, Birthday)
+VALUES (1, '이혜리', '1994-06-09');
+
+INSERT INTO Person
+VALUES (1, '이혜리', '1994-06-09');
+
+insert into Person values (1, '이혜리', '1994-06-09')
+--------------------
+
+**UPDATE** Person **SET** **갱신(수정)**
+
+**UPDATE** Person **SET** Name = '혜리';
+
+
+**DELETE FROM** Person; **삭제**
+
+
+SELECT Name FROM Person;  원하는 열만 조회하기 
+SELECT Name FROM Person **ORDER BY** Name;    원하는열을 오름차순으로 조회하기
+SELECT Name FROM Person ORDER BY Name **DESC**; 원하는 열을 역순으로 조회하기
+SELECT * FROM Person **WHERE** Name = '박소진';  일치하는 것 조회하기
+SELECT * FROM Person WHERE Birthday LIKE '1986%';   일치하는 문자를 포함하는  찾기
+
+UPDATE Person SET Name = '소진' WHERE Name = '박소진';   박소진을 소진으로 수정하기
+
+*은 모든을 의미한다.
+

@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-15T21:50:41+09:00
+
+====== 날짜 ======
+Created 금요일 15 6월 2018
+
+strftime('%Y-%m-%d %H:%M:%S', 'now', 'localtime')

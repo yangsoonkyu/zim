@@ -1,0 +1,72 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-15T21:53:50+09:00
+
+====== blog 설정 ======
+Created 금요일 15 6월 2018
+
+1. open 으로 djangogirl폴더를 연다 
+2. 터미널 창에 프로젝트 mysite 생성 명령을 입력			>django-admin.py startproject mysite .   ( 공백과   .  까지 잘 입력해준다)
+3. mysite 폴더가 생성된다 setting.py를 열고 아래 3개 수정
+		
+		TIME_ZONE = 'Asia/Seoul'
+
+		STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+		ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+		
+4. 터미널창에 migrate를 해준다 (db생성)				>python manage.py migrate
+5. 터미널 창에 runserver를 입력						>python manage.py runserver
+	- run>edit configurations> [[+python]] >이름을 런서버로 지정해주고 스크립트 패스에 manage.py 지정 파라미터에 runserver 입력 
+	- 같은 방법으로 파라미터에 shell 입력 
+	- 화면 오른쪽 상단 연두색 삼각형버튼으로 명령어 입력없이 사용할수 있다 
+6. http://127.0.0.1:8000/ 에 접속하면 It worked!라는 글자가 뜨면 ok
+
+
+7. 터미널창에 스타트앱을 입력						>python manage.py startapp blog
+8. blog 폴더가 생성된다 셋팅.py에 INSEALLED_APPS 수정
+	
+	INSTALLED_APPS = [
+		'django.contrib.admin',
+		'django.contrib.auth',
+		'django.contrib.contenttypes',
+		'django.contrib.sessions',
+		'django.contrib.messages',
+		'django.contrib.staticfiles',
+		'blog',
+	
+9. blog\models.py 에 class Post를 입력한다 (오타와 띄어쓰기 주의)
+
+			from django.db import models
+			from django.utils import timezone
+			
+			
+			class Post(models.Model):
+				author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+				title = models.CharField(max_length=200)
+				text = models.TextField()
+				created_date = models.DateTimeField(
+						default=timezone.now)
+				published_date = models.DateTimeField(
+						blank=True, null=True)
+			
+				def publish(self):
+					self.published_date = timezone.now()
+					self.save()
+			
+				def ____str____(self):
+					return self.title
+
+10. 터미널창에 메이크마이그레이션 입력 			>python manage.py makemigrations blog
+11. 터미널 창에 마이그레이트 해준다				>python manage.py migrate blog
+12. blog\admin.py로 가서 아래 내용을 입력해준다 (장고관리자가 포스트를 관리할수 있도록 입력)
+
+		from django.contrib import admin
+		from .models import Post
+		
+		admin.site.register(Post)
+
+13. 터미널 창에 슈퍼사용자만들기를 입력한다.			>python manage.py createsuperuser
+14. 서버 실행후 http://127.0.0.1:8000/admin/%EC%97%90 들어가 로그인한후 post가 뜨는지 확인하고 post 작성을 한다 (한글입숨)
+
+ 

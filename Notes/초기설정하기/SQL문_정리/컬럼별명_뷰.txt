@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-15T21:38:57+09:00
+
+====== 컬럼별명 뷰 ======
+Created 금요일 15 6월 2018
+

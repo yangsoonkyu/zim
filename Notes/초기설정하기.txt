@@ -1,0 +1,55 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-15T18:54:15+09:00
+
+====== 초기설정하기 ======
+Created 금요일 15 6월 2018
+
+
+**파이선 다운로드** https://www.python.org/downloads/windows/
+1.파이썬 설치할때 Add Python 3.6 to PATH 꼭 체크하기
+2. Customize installation 선택
+3. next누르고 Advanced Opitons에서 폴더 위치를 새로 지정해준다
+location : D:\Python\Python36-32 으로 지정해준다
+
+**장고 설치하기**
+1.명령프롬프트에서 d드라이브로 이동 			> d:
+2. djangogirls 폴더를 생성한다 				> mkdir djangogirls)
+3. 장고걸스 폴더 안에 진입 한다 				> cd djangogirls
+4. 가상환경을 생성한다.					> python -m venv myvenv
+5. 가상환경을 실행한다.					> myvenv\script\actvate
+6. (myvenv) 가 앞에 뜨면 성공!  장고를 설치한다.	> pip install django~=1.11.0
+7. pip list 입력으로 장고가 잘 설치되엇는지 확인	> pip list 
+8. 실행 후에 
+
+
+**파이참 다운로드** https://www.jetbrains.com/pycharm/download/#section=windows
+1.Community를 다운 받는다
+
+**비쥬얼 스튜디오 다운로드** https://code.visualstudio.com/Download
+확장하기 1. open in browser 1.1.0    2.jet brains IDE keymap 
+글씨체 바꾸기 = 고정폭 폰트로 D2coding 추천
+
+**Git bash 다운로드** https://git-scm.com/download/win
+1. Use a [[Home:TrueType]] font in all console windows 체크!!
+2. next 후에 choosing the default editor used by Git에서 아래서 두번째 Use Visual Studio Code as Git's default editor 선택
+3. Adjustin your PATH environment 에서 맨아래 Use Git and optional Ynix tools from the Windows Command prompt 선택
+4. 다음부터는 기본설정 또는 Use Git and optional Unix tools from the Windows Command Prompt 선택
+
+**Git Hub** https://github.com/
+
+DB browser https://sqlitebrowser.org/
+
+
+사이트 목록 
+장고걸스 튜도리얼 https://tutorial.djangogirls.org/ko/
+점프 투 파이썬 https://wikidocs.net/book/1
+한글입숨(간세네) http://guny.kr/stuff/klorem/
+모두의 알고리즘 https://thebook.io/006935/
+깃 튜도리얼 https://backlog.com/git-tutorial/kr/
+zim wiki https://zim.glump.net/windows/
+파이썬애니웨어 https://www.pythonanywhere.com
+HTML 공부 https://www.w3schools.com/Html/default.asp
+SQLite로 배우는 데이터베이스 https://wikidocs.net/book/1530
+특수문자 이름 정리  http://mainia.tistory.com/1523       http://jdm.kr/blog/87
+
