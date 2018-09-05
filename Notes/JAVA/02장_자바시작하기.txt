@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-09-05T22:32:35+09:00
+
+====== 02장 자바시작하기 ======
+Created 수요일 05 9월 2018
+
+ㅇ 변수
+
+ㅇ 주석
+
+ㅇ 메소드 main

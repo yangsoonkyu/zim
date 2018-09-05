@@ -2,7 +2,7 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 Creation-Date: 2018-06-15T18:54:15+09:00
 
-====== 초기설정하기 ======
+====== 초기설정하기 파이썬 ======
 Created 금요일 15 6월 2018
 
 
