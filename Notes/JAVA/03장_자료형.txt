@@ -11,7 +11,7 @@ Java Data Type
 	ㄴ Boolean Type(__boolean__)
 	ㄴ Numeric Type
 		ㄴ Integral Type
-			ㄴ Integer Type(__short, int, long__)
+			ㄴ Integer Type(__short, int, long, byte__)
 			ㄴ Floating Point Type(__float, double__)
 		ㄴ Character Type(__char__)
 ㄴ **Reference** Type
@@ -21,7 +21,11 @@ Java Data Type
 	ㄴ Enum Type
 	ㄴ etc.
 
-
+ㅇ 사용되는 바이트의 크기 기본자료형
+1바이트(8bit, 2^8 -128~127)										byte				(바뀌지 않는 자료를 저장할때)
+2바이트(16bit, 2^16 -32768~32768)									short, char
+4바이트(32bit, 2^32 -2147483648 ~ 2147483647)							int, float  			(컴퓨터는 intger에 최적화되어 있어서 가장 빠르고 가장많이 쓴다. )
+8바이트(64bit, 2^64 -9223372036854775808 ~ 9223372036854775807)			long, double
 
 
 ===== ㅇ 숫자 primitive Type =====

@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-09-06T10:11:28+09:00
+
+====== 05-1 클래스 ======
+Created 목요일 06 9월 2018
+
+[ ] **클래스**
+​
+	접근자 + 클래스 + 클래스명 {}
+	public   class     Animal {}
+​
+​
+[ ] **객체변수** = 인스턴스 변수 = 멤버변수 = 속성
+​
+​
+​
+​
+public class Animal {					  //클래스 애니멀
+	String name; 				  	  //객체변수
+	
+	public void setName(String name) {		//메소드 setName(문자열을 요구한다.)
+		this.name = name;			
+	}
+	public static void main(String[] args) {		//문자열 배열을 매개변수로 받는다
+		Animal cat = new Animal();		//cat 객체를 생성한다 or 애니멀클래스의 인스턴스인 캣을 만든다
+		cat.setName("boby");			//cat은 애니멀 클래스의 인스턴스로 setName메소드를 가지고 있다.
+		System.out.println(cat.name);		//setName메소드가 cat.name = "boby" 를 적용시켰으므로 boby가 반환된다.
+​
+	}
+​
+}
+​
+* void   리턴되는 값의 타입이 비어있음을 설명한다. 즉 리턴값이 없다.
+​
