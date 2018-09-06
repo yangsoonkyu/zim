@@ -58,6 +58,14 @@ ava(썬마이크로시스템즈에서 1995년 개발, 객체지향언어)
  eclipse.exe 클릭하여 바로 실행
 
 
+	[ ] ==== 이클립스 폰트설정 ====
+
+	[ ] D2Codig 최진버전을 다운받는다 (깃허브)
+	[ ] 글꼴 설치후에 이클립스에서 설정해준다
+	[ ] window>preference>font 검색 > Colors and Fonts > Basic에서 맨 아래로 내려서
+	[ ] Text Font, Text Editor Block  Selection Font 두개를 D2Coding 으로 바꿔준다 (Edit)
+
+
 ===== 3. Hello World 출력 =====
 
  프로젝트생성
