@@ -1,0 +1,116 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-09-07T11:28:52+09:00
+
+====== 05-5 생성자 ======
+Created 금요일 07 9월 2018
+
+[ ] 생성자 규칙 
+	클래스명과 메소드 명이 동일하다
+	 리턴타입을 정의하지 않는다.
+	
+	ex) public dog(String name){  //클래스명이 같고 리턴타입이 없다. //인수를 요구
+		this.setName(name);
+	 }
+
+	생성자는 new라는 키워드가 사용될 때 호출된다.
+	생성자는 클래스가 new가 생성자를 만들때 기본적으로 가져야 할 값을 지정해주는 것. 
+	 __(객체 생성시에 필수적인 행동을  제어할수 있다. ) 생성자를 쓰는 이유__
+	객체생성 방법이 생성자의 규칙과 맞지 않으면 컴파일 오류 발생
+	
+	
+	--------------------
+	public class HouseDog extends Dog {
+		public HouseDog(String name) {          // 클래스명이 동일하고 리턴타입 정의가 없는 생성자 
+									// 입력값으로 문자열 name을 요구한다. 
+									// 입력값이 생성자의 규칙과 맞지 않으면(문자가 아니면) 컴파일 오류 발생
+			this.setName(name);
+		} 
+	
+		public void sleep() {
+			System.out.println(this.name+" zzz in house");
+		} 
+	
+		public void sleep(int hour) {
+			System.out.println(this.name+" zzz in house for " + hour + " hours");
+		} 
+	
+		public static void main(String[] args) {
+			HouseDog dog = new HouseDog("happy");
+			System.out.println(dog.name);
+		}
+	}
+	
+	
+	--------------------
+	
+	
+	
+
+
+[ ] default 생성자 
+	생성자의 입력 항목이 없고 생성자 내부에 아무 내용이 없는 생성자를 default 생성자라고 부른다
+	만약 클래스에 생성자가 하나도 없다면 컴파일러는 자동으로 디폴트 생성자를 추가한다. 
+	
+	
+	--------------------
+	
+	public class HouseDog extends Dog {
+		public HouseDog() {  		//default 생성자 
+	        
+		} 
+	
+		public void sleep() {
+			System.out.println(this.name+" zzz in house");
+		} 
+	
+  			  
+--------------------
+
+
+
+[ ] 생성자 오버로딩
+	입력항목이 다른 생성자를 여러개 만들수 있다. 
+	메소드 오버로딩과 마찬가지의 개념이다 
+
+[ ] __생성자는 부모의 생성자부터 실행된다.__ 
+
+
+[ ] this와 super
+	  this는 자기자신을 가르키는 키워드이고 super는 상속해준 부모를 가르키는 키워드이다. 
+	  super는 상속받으면 생성자에 자동으로 생성된다 (보이지않아도 있음)
+	 super를 입력하는 경우는  부모클래스가 인수를 요구할때 자식클래스에서 생성자에 super(인수)를 입력 할수 있다. 
+	
+
+--------------------
+	public class Dog {
+		public Dog(String name){
+			System.out.println(name);
+		}
+	}
+	
+	--------------------
+	
+	
+	
+	
+	
+	public class HouseDog extends Dog {
+		public HouseDog() { 
+			super("ruby")		// 부모클래스 Dog는 문자열을 입력받아야하므로 
+							// 자식 생성자에서 문자열을 입력해준다.
+	        
+		} 
+	
+		public void sleep() {
+			System.out.println(this.name+" zzz in house");
+		} 
+
+
+
+
+--------------------
+
+
+	 
+	

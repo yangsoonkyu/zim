@@ -16,10 +16,11 @@ Created 목요일 06 9월 2018
 --------------------
 public class Test {
 	public __int__ sum(int a, int b) {  			**//void는 리턴값이 없을때 사용하고 int라고 입력했으므로 리턴값은 int(정수)이다.**
+									   //__static__을 쓰면 **오버라이딩 불가** ex) public __static__ int sum(int a, intb )
 		return a+b;
 	}
 
-	public __static__ void main(String[] args) {  		**//static을 쓰면 오버라이딩 불가**
+	public static void main(String[] args) {  		
 		int a = 3;
 		int b = 4;
 
@@ -38,8 +39,7 @@ public class Test {
 ㅇ 메소드의 구조
 
 1. 입력값이 없는 메소드 
-
-public String say() {
+public String say( ) {
 	return "Hi";
 }
 
@@ -47,10 +47,11 @@ public String say() {
 
 public class Test4 {
 	public void sum(int a, int b) {
-		System.out.println(a + "과 " + b + "의 합은" + (a+b)+"입니다.");
+		System.out.println(a + "과 " + b + "의 합은" + (a+b)+"입니다.");     // 이부분은 리턴값이 아니고 콘솔로그에표시하는것 // 출력과 리턴값은 다르다!
+		
 	}
 
-	public static void main(String[] args) {
+	public static __void__ main(String[] args) {  //리턴값이 없을때는 void
 		
 	Test4 myTest = new Test4();
 	myTest.sum(3, 4);
@@ -60,8 +61,8 @@ public class Test4 {
 
 3. 입력값도 리턴값도 없는 메소드
 4. 리턴의 또 다른 쓰임새 
-	a. 메소드 빠져나가기
-	b. void문 에서만 가능
+	__void문에서만__ return으로 메소드를 빠져나갈수 있다. 
+	return 자료형이 void가 아닌데 rturn만 입력하면 컴파일시 오류가 발생한다.
 
 5. 메소드 내에서 선언된 변수의 효력 범위
 	a. 값을 주고 받기 위해서는 매개변수가 필요하다.

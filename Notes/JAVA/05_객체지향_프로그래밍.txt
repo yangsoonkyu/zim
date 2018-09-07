@@ -9,3 +9,23 @@ Created 수요일 05 9월 2018
 클래스 이름과 파일명을 같게 하는 이유는.. 다르게 사용할수 있지만 
 
 클래스파일의 이름은 클래스이름을 따라가므로 자바파일과 클래스파일의 이름을 같게 해주기 위해서 
+
+
+
+
+public class HouseDog __extends__ Dog {				//Dog를 상속한다.
+	public void sleep() {							
+		System.out.println(this.name+" zzz in house");
+	} 
+
+	public void sleep(int hour) {
+		System.out.println(this.name+" zzz in house for " + hour + " hours");
+	} 
+
+	public static void main(String[] args) {
+		HouseDog houseDog = new HouseDog();
+		houseDog.setName("happy");
+		houseDog.sleep();
+		houseDog.sleep(3);
+	}
+}
