@@ -1,0 +1,123 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-09-10T11:30:35+09:00
+
+====== 05-7 다형성 ======
+Created 월요일 10 9월 2018
+
+
+
+[ ] **다양성(폴리모피즘)**
+[ ] public class Lion **extends Animal implements Predator** 
+클래스의 객체이면서 인터페이스의 객체가 될수 있다. 
+객체가 한개 이상의 자료형 타입을 갖게 되는 특성을 다양성이라고 한다
+
+[ ] 인터페이스의 **상속은 여러개가 가능**하다. (클래스 상속은 하나만 가능)
+
+
+--------------------
+**Predator.java**
+
+public interface Predator {
+	public String getFood();  // 인터페이스에 메소드가 추가됨.
+}
+
+**Barkable.java**
+
+public interface Barkable {
+	public void bark();
+}
+
+**BarkablePredator.java**   // 인터페이스 작성
+
+public interface BarkablePredator __extends Barkable, Predator__ {  		// 두개의 인터페이스를 상속받을수 있다. 
+
+}
+
+
+**Animal.java**
+
+public class Animal {
+	String name;
+
+	public void setName(String name) {
+		this.name = name;
+	}
+}
+
+**Tiger.java** // 인터페이스 구현
+
+public class Tiger extends Animal implements BarkablePredator { 		//두개의 인터페이를 상속받은 인터페이스 구현
+	public String getFood() {			// 인터페이스의 메소드 구현
+		return "apple";
+	}
+
+	public void bark() { 				 // 인터페이스의 메소드 구현
+		System.out.println("어흥");
+	}
+}
+
+**Lion.java** // 인터페이스 구현
+
+public class Lion extends Animal implements BarkablePredator {
+	public String getFood() {			// 인터페이스의 메소드 구현
+		return "banana";
+	}
+
+	public void bark() {
+		System.out.println("으르렁");			 // 인터페이스의 메소드 구현
+	}
+}
+
+**ZooKeeper.java**
+
+public class ZooKeeper {
+	/* public void feed(Tiger tiger) {
+		System.out.println("feed apple");
+	}
+
+	public void feed(Lion lion) {
+		System.out.println("feed banana");
+	} */
+
+	public void feed(__Predator predator__) {			//매개변수로 인터페이스를 받는다.
+		System.out.println("feed "+predator.getFood()); // predator.getFood()를 호출하면 
+	// Predator 인터페이스를 구현한 구현체(Tiger, Lion)의 getFood() 메소드가 호출된다.
+	}
+
+	public static void main(String[] args) {
+		ZooKeeper zooKeeper = new ZooKeeper();
+		Tiger tiger = new Tiger();
+		Lion lion = new Lion();
+		zooKeeper.feed(tiger);
+		zooKeeper.feed(lion);
+	}
+}
+Bouncer.java // bark() 메소드와 getFood() 구현
+
+package testProject;
+
+public class Bouncer {
+	public void barkAnimal(BarkablePredator animal) {				//매개변수가 BarkablePredator 타입인지 확인한다
+														 // 즉 받는 매개변수가 BarkablePredator 를 구현했는지 확인한다.   
+
+~~//		if (animal instanceof Tiger) { // instanceof 는 특정 객체가 특정 클래스의 객체인지를 조사할 때 사용되는 자바의 내장 키워드~~
+~~//			System.out.println("어흥");~~
+~~//		} else if (animal instanceof Lion) {~~
+~~//			System.out.println("으르렁");~~
+~~//		}~~
+
+
+		animal.bark();
+		System.out.println("feed " + animal.getFood()); // getFood는 리턴값을 화면에 출력
+	}
+
+	public static void main(String[] args) {
+		Tiger tiger = new Tiger();
+		Lion lion = new Lion();
+
+		Bouncer bouncer = new Bouncer();
+		bouncer.barkAnimal(tiger);
+		bouncer.barkAnimal(lion);
+	}
+}

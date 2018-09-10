@@ -44,7 +44,7 @@ Created 목요일 06 9월 2018
 	사전적 의미 extend: 더 길게 크게 넓게 만들다
 	상속받는 다는것을 나타낸다.
 	public class Dog __extends__ Animal  //Dog는 Animal을 상속받는다
-	public class HouseDog __extends__ Dog  // [[HouseDog는]] Dog를 상속받는다.
+	public class HouseDog __extends__ Dog  // HouseDog는 Dog를 상속받는다.
 	
 
 [ ] ====== IS_A 관계 ======

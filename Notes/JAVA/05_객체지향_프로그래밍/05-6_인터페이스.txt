@@ -1,0 +1,87 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-09-10T10:17:59+09:00
+
+====== 05-6 인터페이스 ======
+Created 월요일 10 9월 2018
+
+
+[ ] **interface**
+상속의 단점을 보완하여 기능을 구현하는데 사용한다. 
+
+[ ] **형태**
+public __interface__ Predotdor  // 인터페이스는 class가 아닌 interface라는 키워드 사용 
+--------------------
+public __interface__ Predator {  // 인터페이스 형태 
+	public String getFood();
+
+}
+--------------------
+
+
+[ ] **구현**
+__implements__ Predator // implements 라는 키워드를 사용한다. 
+
+--------------------
+public class Lion extends Animal __implements__ Predator {  // 인터페이스 구현
+
+	public String getFood() {
+		return "banana";
+	}
+}
+--------------------
+
+
+[ ] 인터페이스의 객체를 만들어 자료형 타입으로 사용할수 있고 매개변수 전달할수 있다.
+[ ] 매개변수에 모두의 공통적인 기능을 구현한다.
+
+
+[ ] **다형성(폴리모피즘)**
+[ ] public class Lion **extends Animal implements Predator** 
+클래스의 객체이면서 인터페이스의 객체가 될수 있다. 
+객체가 한개 이상의 자료형 타입을 갖게 되는 특성을 다양성이라고 한다
+
+[ ] **메소드**
+인터페이스의 메소드는 메소드의 이름과 입출력에 대한 정의만 있고 몸체가 없다. 
+메소드는 인터페이스를 implements 한 클래스들이 변경할수 있다. 
+
+--------------------
+public __interface__ Predator {  				// 인터페이스 형태 
+	public String getFood();                  	//몸체가 없다 //인터페이스를 구현하는 클래스에서 변경해준다.
+}
+--------------------
+
+
+
+
+
+--------------------
+
+
+public class ZooKeeper {
+//	public void feed(Tiger tiger) {
+//		System.out.println("feed apple");
+//	}
+//	
+//	public void feed(Lion lion) {
+//		System.out.println("feed banana");
+//	}
+	
+	public void feed(__Predator predator__) {				// 매개변수에 인터페이스를 입력
+		System.out.println("feed "+ __predator.getFood()__); 	// 인터페이스를 구현한 구현체의 getFood가 호출된다. 
+		
+	}
+	
+	public static void main(String[] args) {
+
+		ZooKeeper zooKeeper = new ZooKeeper();
+		Tiger tiger = new Tiger();
+		Lion lion = new Lion();
+		Crocodile crocodile = new Crocodile();
+		zooKeeper.feed(tiger);
+		zooKeeper.feed(lion);
+		zooKeeper.feed(crocodile);
+		
+	}
+
+}
