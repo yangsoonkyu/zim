@@ -10,3 +10,34 @@ Created 월요일 10 9월 2018
 [ ] 인터페이스의 메소드와 같은 역할을 하는 메소드에도 abstract 라고 붙여준다.
 
 [ ] 즉 abstract 클래스를 상속하는 클래스에서 해당 메소드를 구현해야하만 한다. 
+
+//Predator.java//
+public __abstract__ class Predator extends Animal {		
+	public __abstract__ String **getFood**();         //상속받는 클래스에서 구현해줘야한다. 
+}
+
+	public void //test(){//					//일반 메소드도 사용할수 있다.
+	System.out.println("추상클래스");		// 구현해주지 않아도된다.
+}
+
+
+//Tiger.java//
+public class Tiger __extends Predator__ implements Barkable {  //추상클래스를 상속받았다.
+	public String **getFood**() {			// 메소드 구현
+		return "apple";
+	}
+
+	public void bark() {
+		System.out.println("어흥");
+	}
+
+	public static void main(String[] args) {
+	Tiger tiger = new Tiger();
+	tiger//.test()//;					//상속받았기 때문에 사용할수 있다. 
+}
+}
+
+
+
+
+[ ] 인터페이스와 상속의 중간..?

@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-09-11T17:05:45+09:00
+
+====== 00 이클립스 단축키 ======
+Created 화요일 11 9월 2018
+
+줄정렬 Ctrl + Shift + f
+
+줄이동 Alt + 방향키
+
+한줄 복사 Alt + Ctrl + 방향키
+
+한줄삭제 Ctrl + d
+
+이전으로 되돌리기 Ctrl + y, Ctrl +z
+
+import 문을 자동 생성 Ctrl + Shift + O
+import 문을 자동 생성  객체에 커서를 위치 시키고 Ctrl + Shift + M

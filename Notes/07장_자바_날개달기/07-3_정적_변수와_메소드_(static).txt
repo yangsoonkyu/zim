@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-09-11T11:01:52+09:00
+
+====== 07-3 정적 변수와 메소드 (static) ======
+Created 화요일 11 9월 2018
+
+[ ] static을 앞에 붙여줘서 클래스변수 또는 클래스 메소드를 지정한다. 
+[ ] ~~클래스 변수 =  멤버변수 객체변수는 두종류가 있다. 클래스변수와, 인스턴스변수로 나눈다.~~ 
+[ ] 변하지 않는 값으로 메모리를 한번만 할당하여 가져다가 쓰는 개념이다. (공유의개념)
+[ ] 인스턴스를 생성하지 않고도 불러올 수 있다. 
+[ ] static 변수
+[ ] static method
+
+===== 싱글톤 패턴 =====
+
+객체를 한개만 만들어야할 경우 // 단 하나의 객체만을 생성하게 강제하는 법
+
+class Singleton {
+	__private__ static Singleton one;   //1 클래스 안에서만 사용할수 있다. 
+	__private__ Singleton() {			// 2생성자에 private를 붙여줘서 초기화를 못하게 한다.
+							// 3인스턴스를 못만들게 하는 방법
+	}
+
+	public static Singleton getInstance() {
+		if(one==null) {				// 맨처음 one는 null이다.  두번째부터는 주소를 가지고 있다.
+			one = new Singleton();		// 클래스 안에 있으므로 접근할수 있다. 초기화할수 있으므로 클래스생성
+		}
+		return one;					//Reference 타입으로 객채의 주소를 전달한다. 
+	}
+}
+
+public class SingletonTest {
+	public static void main(String[] args) {
+		Singleton singleton1 = Singleton.getInstance();	// 새로운 객체를 만들어 주소를 전달받앗다.
+		Singleton singleton2 = Singleton.getInstance();	// 이미 만들어진 주소를 전달받았다. 
+		System.out.println(singleton1 == singleton2);		// 두개는 같은 주소를 가르킨다 (하나의 인스턴)
+	}
+}

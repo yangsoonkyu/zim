@@ -1,0 +1,176 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-09-11T14:53:28+09:00
+
+====== 06-2 파일 입출력 ======
+Created 화요일 11 9월 2018
+
+[ ] ====== 파일 쓰기  ======
+
+
+==== 1. FileOutputStream 클래스 사용하여 파일 쓰기 ====
+
+
+
+--------------------
+
+import java.io__.FileOutputStream__;
+import java.io.IOException;
+
+public class FileWrite {
+	public static void main(String[] args) throws IOException {
+	FileOutputStream output = new FileOutputStream("c:/out.txt"); 			// 파일의 경로와 이름을 지정해준다.
+	output.close();											// 사용한 파일객체는 꼭 닫아주어야한다. 
+	}
+}
+
+
+
+[ ] 파일에 내용쓰기
+
+--------------------
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class FileWrite {
+	public static void main(String[] args) throws IOException {
+		**FileOutputStream** output = new FileOutputStream("c:/out.txt");
+		__for(int i=1; i<11; i++) {__					
+__            String data = i+" 번째 줄입니다.\r\n";__		//문자열 데이터를 변수에 담는다.
+__            output.write(data.getBytes());__				// **FileOutputStream**에 값을 쓸 때는 byte배열로 써야 하므로 문자열이 담긴 변수 data를 바이트로 바꿔서 써준다. 
+		}
+		output.close();							// 사용한 파일객체는 꼭 닫아주어야한다. 
+	}
+}
+--------------------
+
+
+==== 2. PrintWriter를 사용하여 파일쓰기 ====
+
+
+--------------------
+
+import java.io.__PrintWriter;__
+import java.io.IOException;
+
+public class FileWrite {
+
+	public static void main(String[] args) throws IOException{
+
+		PrintWriter pw = new PrintWriter("c:/test.txt");
+		String data = "안녕하세요";
+		pw.println(data); 			// 화면에 출력될 내용이 파일로 보내어진다.
+		pw.close();				// 꼭 닫아주어야 내용이 저장된다.
+
+
+	}
+
+}
+
+--------------------
+
+
+[ ] ====== 파일에 내용 추가하기  ======
+
+
+
+
+--------------------
+**1.FileWriter사용 파일에 내용 추가하기** 
+
+import java.io.__FileWrite__r;
+import java.io.IOException;
+
+public class FileWrite {
+	public static void main(String[] args) throws IOException {
+		__FileWrite__r fw = new FileWriter("c:/out.txt");
+		for(int i=1; i<11; i++) {
+			String data = i+" 번째 줄입니다.\r\n";
+			fw.write(data);
+		}
+		fw.close();
+
+		FileWriter fw2 = new FileWriter("c:/out.txt", __true)__;			//두번째 입력은 추가모드로 열것인지에 대한 구분이다.
+		for(int i=11; i<21; i++) {
+			String data = i+" 번째 줄입니다.\r\n";
+			fw2.write(data);
+		}
+		fw2.close();
+	}
+}
+
+**2.PrintWriter 사용 파일에 내용 추가하기**
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.__PrintWriter__;
+
+public class FileWrite {
+	public static void main(String[] args) throws IOException {
+		__PrintWriter__ pw = new PrintWriter("c:/out.txt");
+		for(int i=1; i<11; i++) {
+			String data = i+" 번째 줄입니다.";
+			pw.println(data);
+		}
+		pw.close();
+
+
+		PrintWriter pw2 = new PrintWriter(new FileWriter("c:/out.txt", __true__));
+		for(int i=11; i<21; i++) {
+			String data = i+" 번째 줄입니다.";
+			pw2.println(data);
+		}
+		pw2.close();
+	}
+}
+
+--------------------
+[ ] 
+====== 파일 읽기 ======
+
+
+1. 
+==== FileInputStream 클래스를 이용하여 파일 읽기 (배열이용) ====
+
+--------------------
+import java.io.__FileInputStream;__
+import java.io.IOException;
+
+public class FileRead {
+	public static void main(String[] args) throws IOException {
+		byte[] b = new byte[1024];							// 배열의 길이는 항상 지정해주어야한다.
+		__FileInputStream__ input = new FileInputStream("c:/out.txt");		// 정확한 길이를 모를경우에는 좀 불편한 코딩방법이다. 
+		input.read(b);
+		System.out.println(new String(b));
+		input.close();
+	}
+}
+
+--------------------
+
+
+==== 2.FileReader와 BufferedReader의 조합을 사용하여 라인단위로 파일읽기 ====
+--------------------
+import java.io.**BufferedReader**;
+import java.io**.FileReader**;
+import java.io.IOException;
+
+public class FileRead {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new FileReader("c:/out.txt"));
+		while(true) {
+			String line = br.readLine();
+			if (line==null) break;
+			System.out.println(line); 			// 라인단위 읽고 더이상 읽을 라인이 없을경우 while문을 빠져나간다. 
+		}
+		br.close();
+	}
+}
+
+--------------------
+
+
+
+
+
+

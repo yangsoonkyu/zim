@@ -1,0 +1,67 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-09-11T13:45:31+09:00
+
+====== 06-1 콘솔 입출력 ======
+Created 화요일 11 9월 2018
+
+===== 1.콘솔입력 =====
+
+[ ] **System.in** 을 이용한 콘솔입력
+[ ] __InputStreamReader__ 을 이용한 콘솔입력
+[ ] //BufferedReader// 를 일용한 콘솔입력
+
+InputStream - byte
+InputStreamReader - character
+BufferedReader - String
+
+--------------------
+
+package jump2java.house.person;
+
+import java.io.InputStream;		//System.in 을 이용한 콘솔입력 
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+
+public class StreamTest {
+
+	public static void main(String[] args) throws Exception {
+		InputStream **in** = System.in;						////System.in  1바이트만 읽는다. // //byte
+		InputStreamReader __reade__r = new InputStreamReader(**in**);	//// 고정된 길이로 스트림을 읽을수 있다. (배열을 사용하고 길이를 지정) ////character
+		
+		BufferedReader //br// = new BufferedReader(__reader__);  		// //한줄을 읽는다// //String
+		
+		
+
+		String a = br.readLine();	
+		
+		System.out.println(a);
+
+	}
+
+}
+
+
+--------------------
+
+===== Scanner =====
+
+
+
+--------------------
+import java.util.Scanner;
+
+public class Test {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println(sc.next());
+	}
+}
+
+--------------------
+
+sc.next() - 단어
+sc.nextLine() - 라인
+sc.nextInt() - 정수
+
+2. 콘솔출력

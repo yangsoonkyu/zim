@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-09-11T10:04:58+09:00
+
+====== 07-2 접근제어자 ======
+Created 화요일 11 9월 2018
+
+[ ] 종류
+	private
+	default
+	**protected  //한번더 공부하기 **
+	public
+
+[ ] 허용범위(최소부터)
+	ㅇ 접근제어자
+	 private -> default -> protected -> public 순으로 보다 많은 접근을 허용한다
+	
+	ㅇ범위
+	클래스내부<패키지내<패키지내 또는 상속받은 클라스< 어디서나 접근
+	
+	ㅇ 정리
+	private (클래스 내부)
+	default (패키지 내)
+	protected(패키지내 또는 상속받은 클라스, 상속받은 클라스는 임포트해줘야 쓸수 있다. )
+	public( 어디서나 접근 가능 )
+ 
