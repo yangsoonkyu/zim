@@ -65,6 +65,13 @@ ava(썬마이크로시스템즈에서 1995년 개발, 객체지향언어)
 	[ ] window>preference>font 검색 > Colors and Fonts > Basic에서 맨 아래로 내려서
 	[ ] Text Font, Text Editor Block  Selection Font 두개를 D2Coding 으로 바꿔준다 (Edit)
 
+	[ ] ==== 이클립스 메모리설정 ====
+	[ ] 이클립스 설치 폴더 에서 eclipse.ini를 찾아서 노트패드 프로그램으로 연다.
+	[ ] Xms256m을 찾아서 Xms1024m 으로 바꿔준다. 
+	[ ] 컴퓨터 용량이 클때는 2048로 사용, 용량이 더 작을때는 512로 사용하면 프로그램이 빠르게 돌아간다 .
+
+
+
 
 ===== 3. Hello World 출력 =====
 

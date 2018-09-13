@@ -81,6 +81,13 @@ Java Data Type
 	__replaceAll__			a.replaceAll("Java", "World")	a의 Java를 world로 바꿔줌
 	__substring__			a.substring(0, 4)			a의 인덱스번호 0부터 4번앞까지 반환
 	__toUpperCase__		a.toUpperCase()			a의 모든 문자를 대문자로 바꿔준다.
+	
+	
+	문자열의 길이는 length()로 확인할수 있다.  
+	자바는 한글 한글자의 길이를 1로 계산한다.
+	.getByte().length 로 확인하면 바이트로 바꾼 문자열의 길이를 얻을 수 있다. 
+	바이트로는 한글 한글자는 2바이트 공백은 1바이트 이다 
+	
 ​
 
 		
@@ -108,6 +115,27 @@ Java Data Type
 	
 	weeks.__length__ 	배열의 길이
 	weeks[2]  	2번 인덱스의 값
+	
+	
+	
+	=== ㅇ배열 복사하기 ===== ===
+	System.arraycopy는 배열의 값을 복사할 경우 사용한다. 
+	
+	arraycopy(Object src, int srcPos, object dest, int destPos, length)
+	**파라미터 
+		src - 전송원배열
+		srcPos- 소스 배열의 개시 위치
+		dset - 전송처 배열
+		dsetPost - 전송처 데이터내의 게시 위치
+		length - 카피되는 배열의 요소의 수 
+	
+	System.arraycopy(array1, 0, array2, 0, array1.length);
+	// arry1의 0번 값을 array2의 0번째로 1의 길이만큼 복사
+	
+	System.arraycopy(array1, 0, array2, 2, 2);
+	// arry1의 0번 값을 arry2dml 2번 값부터 2개의 길이만큼 복사 
+	
+	
 ​
 ​
 ​

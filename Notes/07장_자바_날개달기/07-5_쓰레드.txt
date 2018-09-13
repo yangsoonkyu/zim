@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-09-12T11:54:45+09:00
+
+====== 07-5 쓰레드 ======
+Created 수요일 12 9월 2018
+
+동작하고 있는 프로그램을 프로세스(Process)라고 한다.
+
+쓰레드는 
+프로세스를 나누어서 사이사이에 다른 프로세스를 넣어서 두가지 또는 그 이상의 일을 동시에 할수 있다.
+
+--------------------
+public class Test __extends Thread__ {      
+	int seq;
+	public Test(int seq) {
+		this.seq = seq;
+	}
+	public void run() {
+		System.out.println(this.seq+" thread start.");
+		try {
+			Thread.sleep(1000); 		//1초동안 쓰레드를 쉬게 한다.
+		}catch(Exception e) {
+
+		}
+		System.out.println(this.seq+" thread end.");
+	}
+
+	public static void main(String[] args) {
+		for(int i=0; i<10; i++) {
+			Thread t = new Test(i);
+			t.start();
+		}
+		System.out.println("main end.");
+	}
+}
