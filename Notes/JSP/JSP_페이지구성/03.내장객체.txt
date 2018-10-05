@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== 03.내장객체 ======
+Created 금요일 05 10월 2018
+
+웹 프로그래밍에 사용되는 기능을 '객체'로 JSP에 미리 구현해 놓은것
+JSP가 제공하는 내장객체는 request, response, session, application, page 등이 있다. 
+내장 객체는 이미 객체 형태로 제공되기 때문에 별도의 선언이나 초기화 없이 바로 사용이 가능하다. 
+

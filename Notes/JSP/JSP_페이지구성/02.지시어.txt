@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== 02.지시어 ======
+Created 금요일 05 10월 2018
+
+JSP 페이지에 대한 설정 정보를 지정할때 사용한다. 
+
+<%@  %> 의 형태로 <%@ 지시어이름 속성1="속성값" 속성2="속성값"> 처럼 쓴다
+	<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF=8"%>
+
+하나의 지시어 태그에 여러개의 속성을 동시에 지정할수 있다. 
+여러개의 지시어에 속성을 나누어 지정할수도 있다. 
+
+
+ㅇ **include** : JSP 페이지 내에 다른 페이지를 포함시킨다
+ㅇ **page** :  JSP페이지에 대한 정보를 저장한다. 문서의 타입, 출력버퍼의 크기 등등
+ㅇ **taglib** : JSP페이지에서 사용할 태그라이브러리를 지정한다. 
+
+
+
+
+=== page 지시어의 속성 ===
+
+ㅇ autoFlush : 출력 버퍼가 다 찼을 경우 자동으로 버퍼를 비울지 여부를 나타낸다 기본값은 true이고 false일때 버퍼가 다 차면 예외를 발생시간다. 
+
+ㅇ contentType : 페이지 실행결과로 생성되는 문서의 종류와 사용될 charest 정보를 설정한다.  | text/html
+
+ㅇ import : jsp에서 사용할 자바 클래스를 지정한다. 
+
+ㅇ buffer : 출력 버퍼의 크기를 지정하며 'none'일 경우 출력 버퍼를 사용하지 않는다. 

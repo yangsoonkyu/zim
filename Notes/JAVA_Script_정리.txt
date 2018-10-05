@@ -2,7 +2,7 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 Creation-Date: 2018-07-11T20:17:23+09:00
 
-====== js 정리 ======
+====== JAVA Script 정리 ======
 Created 수요일 11 7월 2018
 
 **Javascript online editer**

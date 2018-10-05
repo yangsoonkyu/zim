@@ -1,0 +1,42 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== 04.액션태그 ======
+Created 금요일 05 10월 2018
+
+<jsp: > 의 형태로 태그의 종류에 따라 서로 다른 속상값을 갖게 된다. 
+액션 태그는 XML 문법을 따르기 때문에 단독 태그의 경우도 반드시 종료 태그를 포함해야 한다.
+
+	(1) 바디(Body)가 있는 경우 : 시작 태그와 종료 태그의 쌍으로 이루어짐
+
+	--------------------
+
+	__<jsp:include page="a.jsp" flush="false">__
+
+	<jsp:param name="paramName" value="value1" />
+
+	__</jsp:include>__
+
+
+	--------------------
+
+
+	(2) 바디(body)가 없는 경우 : 시작 태그에 종료 태그가 포함됨.
+	<jsp:param name="paramName" value="vlaue1" __/>__
+
+
+===== JSP 에서 제공하는 액션 태그 =====
+
+**<jsp:include>**  :  다른 페이지의 실행 결과를 현재의 페이지에 포함시킬때 사용 
+**<jsp:forward>**  :  페이지 사이의 제어를 이동시킬 때 사용 
+
+<jsp:plug-in>   :   웹 브라우저에서 자바 애플릿을 실행시킬 때 사용
+<jsp:useBean>  :   자바빈을 JSP 페이지에서 사용할 때 사용 
+<jsp:setProperty> : 프로퍼티의 값을 세팅할 때 사용 
+<jsp:getProperty> : 프로퍼티의 값을 얻어낼 때 사용 
+
+
+*** 액션태그 include와 지시어include의 차이점 (둘다 페이지를 가져옴)
+
+액션태그 인클루드 <jsp:include > 는 페이지의 결과물을 태그에 위치에 포함한다.
+지시어 인클루드 <%@include file="test.jsp">는 파일의 내용을 그대로 위치에 포함하여 내용물에 영향을 준다. 

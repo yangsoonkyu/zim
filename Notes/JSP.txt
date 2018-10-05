@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== JSP ======
+Created 금요일 05 10월 2018
+
+JSP 페이지를 구성하는 요소
+
+ㅇ 스크립트요소
+ㅇ 지시어
+ㅇ 내장객체
+ㅇ 액션태그
+ㅇ 표현언어
+ㅇ 사용자 정의 태그와 JSTL
+

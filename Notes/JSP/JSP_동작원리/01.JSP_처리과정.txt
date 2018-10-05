@@ -1,0 +1,52 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== 01.JSP 처리과정 ======
+Created 금요일 05 10월 2018
+
+https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/JSPLife.png/800px-JSPLife.png
+
+
+
+1. 클라이언트가 특정 JSP에 대한 요청을 보낸다 Request
+
+2. 웹컨테이너(톰캣)은 JSP를 서블릿 자바소스코드로 변환한다. 
+	a. javac가 다시 java파일을 컴파일 하여 class파일로 변환한다.
+
+3. jre가 클래스파일을 실행하여 버퍼로 보낸다.
+
+4. 버퍼가 다 차면 클라이언트에게 보낸다 Response
+
+5. 같은 JSP에 대한 요청이 오면 클래스파일 먼저 찾아보고 없으면 2번 과정을 실행한다. 
+	( jsp에 상응하는 서블릿이 존재하는 경우 바로 서블릿을 실행하여 요청을 처리)
+
+
+
+====== 개발용루트와 서비스용 루트 ======
+
+**개발용 루트**
+jsp파일 생성 > workspace >.metadata> 생략 > 자바파일과 클래스파일 생성
+
+**서비스용 루트**
+프로젝트 우클릭 > Export > WAR file > wepapps 폴더에 WAR 파일 생성 (압축이 풀리면서 프로젝트 폴더)
+
+**서블릿용 루트** 
+workspace > 프로젝트 폴더 > src 폴더에 java파일 생성
+
+
+
+
+
+====== 서블릿 ======
+
+서블릿 파일은 java확장자를 가진다.
+생성자, doGet, doPost 3개의 메서드를 가진다
+요청이 들어오면 get 과 post 중에서 그에 맞는 메소드가 실행된다. 
+
+서블릿은 웹페이지를 동적으로 생성하는 서버픅 프로그램 혹은 그 사양을 말한다. 
+웹서버의 성능을 향상시키기 위해 사용되는 자바클래스의 일종이다. 
+
+
+
+
+ 

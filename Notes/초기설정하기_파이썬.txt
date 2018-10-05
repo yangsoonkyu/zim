@@ -1,6 +1,5 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
-Creation-Date: 2018-06-15T18:54:15+09:00
 
 ====== 초기설정하기 파이썬 ======
 Created 금요일 15 6월 2018
@@ -32,7 +31,8 @@ location : D:\Python\Python36-32 으로 지정해준다
 
 **Git bash 다운로드** https://git-scm.com/download/win
 1. Use a [[Home:TrueType]] font in all console windows 체크!!
-2. next 후에 choosing the default editor used by Git에서 아래서 두번째 Use Visual Studio Code as Git's default editor 선택
+2. next 후에 choosing the default editor used by Git에서 아래서 두번째 __Use Visual Studio Code as Git's default editor 선택 (안될때는 그냥 기본설정후에 git bash에서 설정해준다)__
+																							git bash    > git config --global core.editor code
 3. Adjustin your PATH environment 에서 맨아래 Use Git and optional Ynix tools from the Windows Command prompt 선택
 4. 다음부터는 기본설정 또는 Use Git and optional Unix tools from the Windows Command Prompt 선택
 

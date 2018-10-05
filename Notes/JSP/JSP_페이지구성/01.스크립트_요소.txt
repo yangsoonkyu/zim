@@ -1,0 +1,55 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== 01.스크립트 요소 ======
+Created 금요일 05 10월 2018
+
+1. 스크립트릿	<%   %>  JSP 페이지에 삽입되는 자바프로그램 코드 
+
+2. 표현식		<%= %>  변수, 수식값의 출력을 JSP 페이지에 삽입
+
+3. 선언		<%!  %>  JSP페이지에 삽입되는 자바 선언문
+
+
+
+
+
+--------------------
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	__<%!__					__(선언)__
+		public int sum(int a){
+		int s=0, i=1;
+		for(i=0; i<=a; i++){s += i;}
+		return s;
+__	}%>__
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>제목없음</title>
+</head>
+<body>
+	__<%__		__(스크립트릿)__
+	String str = "표현식 사용예제입니다.";
+	int a =10, b=20;
+	int s1 = sum(100);
+	int s2 = sum(1000);
+	__%>__
+	
+	<h2>__<%= str %>__</h2>	__(표현식)__
+	<h3><%= a %> 더하기 <%=b %>는 <%= a+b %>입니다. </h3>
+	<h3>1부터 5까지 합은 <%= 1+2+3+4+5 %> 입니다.</h3>
+	1부터 100까지의 합은 <%= s1 %>입니다 <br>
+	1부터 1000까지의 합은 <%= s2 %>입니다.
+	
+	
+	
+</body>
+</html>
+
+
+--------------------
+
+
