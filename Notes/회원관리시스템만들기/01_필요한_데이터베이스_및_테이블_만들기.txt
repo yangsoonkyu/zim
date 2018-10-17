@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== 01 필요한 데이터베이스 및 테이블 만들기 ======
+Created 수요일 17 10월 2018
+
+마리아 DB실행(비밀번호입력)
+
+create database my_site;
+
+show databases;
+
+use mysql
+
+create user 'jsp_user'@'127.0.0.1' identified by 'qwer1234';  // user 계정 생성
+
+grant select,insert,update,delete,create,drop on my_site.* to 'jsp_user'@'127.0.0.1'; //권한 설정
+
+
+__사용자를 삭제하고 다시 등록하는 경우 아래와 같이 추가할수 없다는 메세지가 나타나면__
+__Operation CREATE user failed for 'jack'@'localhost'__
+__아래와 같은 명령어를 입력하고 실행한다__
+__FLUSH PRIVILEGES;__
+
+
+
+
+MariaDB [my_site]> create table member(id varchar(20),pass varchar(20),name varchar(20),phone varchar(20),email varchar(50),reg_date datetime);
+
+
+
+
+INSERT INTO member VALUES('user1','user1','user1','010-1111-1111','user1@mysite.com','2018-10-17 13:00:00');
+INSERT INTO member VALUES('user2','user2','user2','010-2111-1111','user1@mysite.com','2018-10-17 13:00:00');
+INSERT INTO member VALUES('user3','user3','user3','010-3111-1111','user1@mysite.com','2018-10-17 13:00:00');
