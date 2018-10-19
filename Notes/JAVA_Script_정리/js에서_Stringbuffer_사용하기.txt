@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== js에서 Stringbuffer 사용하기 ======
+Created 금요일 19 10월 2018
+
+http://fpdlrk.tistory.com/entry/Javascript%EC%97%90%EC%84%9C-StringBuffer-StringBuilder%EB%A5%BC
+
+
+
+
+
