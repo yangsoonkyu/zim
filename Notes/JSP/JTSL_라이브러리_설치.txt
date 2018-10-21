@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-10-21T16:47:53+09:00
+
+====== JTSL 라이브러리 설치 ======
+Created 일요일 21 10월 2018
+
+구글에서 JSTL tomcat 검색
+
+Our Taglibs - Standard 클릭 
+
+version 1.2.3 다운로드 클릭 후 아래로 스크롤 
+
+--------------------
+
+Impl:
+taglibs-standard-impl-1.2.5.jar (pgp, sha512)
+Spec:
+taglibs-standard-spec-1.2.5.jar (pgp, sha512)
+
+--------------------
+두가지 다운로드후 지정폴더에 복사붙여넣기 해준다.
+
+지정폴더 :
+
+1. 톰캣설치폴더 > lib 폴더 안에 
+2. 이클립스 작업폴더>프로젝트명>webcontent>web_inf>lib
+
+
+

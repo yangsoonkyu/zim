@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-10-18T22:43:43+09:00
+
+====== 기본설정 ======
+Created 목요일 18 10월 2018
+
+**ㅇ 다운**
+https://downloads.mariadb.org 에서 다운로드
+	[ ] 버전 10.3.10 
+	[ ] mariadb-10.3.10-winx64.msi
+
+**ㅇ 설치**
+1. msi 파일 실행 
+2. 패스워드 간단하게 입력 "s19626"
+3. 기본으로 설치한다. 
+
+**ㅇ 수동실행 설정하기**
+1. 윈도우 우클릭 > 컴퓨터관리>서비스>mysql 더블클릭 > 시작유형 수동으로 변경
+2. 실행중인지 확인은 작업관리자에서 서비스에 mysql이 실행중이라고 써있다. 
+
+
+**ㅇ 처음시작할때 HeidiSQL 실행해서 세션관리자 설정**
+1. 신규 클릭
+2. 세션이름 my_site
+3. 위에서 설정한 패스워드 입력
+4. 저장
+5. 열기
+
+
+**ㅇJDBC 드라이버 설치하기 (DBMS연동)**
+1. 구글검색 > mariadb jdbc driver download
+2. 2.3.0 다운로드
+3. MariaDB Connector/J .jar files 다운로드(두번째꺼임)
+4. mariadb-java-client-2.3.0.jar 다운로드
+5. 톰캣설치폴더안에 lib 폴더 안에 jar 파일을 붙여넣기 한다. D:\apache-tomcat-7.0.91-windows-x64\apache-tomcat-7.0.91\lib
+
+**ㅇ 테이블을 이미 만들었는데 한글오류가 날때** 쿼리문
+alter table 테이블명 convert to character set utf8;
+
+
+
+

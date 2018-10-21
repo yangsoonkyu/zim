@@ -22,7 +22,8 @@ __Operation CREATE user failed for 'jack'@'localhost'__
 __아래와 같은 명령어를 입력하고 실행한다__
 __FLUSH PRIVILEGES;__
 
-
+데이터베이스를 열고 mysql에서 user에 잘 들어갔는지 확인하기
+mysql에 db에도 설정이 잘 되었는지 확인 
 
 
 MariaDB [my_site]> create table member(id varchar(20),pass varchar(20),name varchar(20),phone varchar(20),email varchar(50),reg_date datetime);
@@ -40,3 +41,8 @@ INSERT INTO member VALUES('user3','user3','user3','010-3111-1111','user1@mysite.
 --------------------
 
 create table board(id varchar(20),title varchar(200),text long varchar,created_date  datetime,published_date datetime,post_num int not null auto_increment primary key);
+
+INSERT INTO board VALUES('user1','제목입니다','테스트 테스트 테스트 테스트 테스트','2018-10-18',null,null);
+
+
+
