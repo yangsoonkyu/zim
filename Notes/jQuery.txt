@@ -1,0 +1,79 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== jQuery ======
+Created 월요일 22 10월 2018
+
+**jQuery 참고 사이트**
+https://www.w3schools.com/jquery/default.asp
+
+
+ㅇ jQuery는 자바스크립트의 라이브러리이다. 
+
+
+$() 는 제이쿼리()라는 함수를 실행한것과 같고 ()안에 매개변수를 넣을수 있다. 
+ex) $(document)  document를 매개변수로 제이쿼리를 실행한다는 뜻 
+
+아래를 로드해야 제이쿼리가 실행된다. 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+ㅇ기본문법
+$(선택자).액션()
+$(selector).action()
+
+
+
+ㅇ 선택자 문법 (css의 문법을 그대로 사용할수 잇다)
+$("*")			Selects all elements	
+$(this)			Selects the current HTML element	
+$("p.intro")			Selects all <p> elements with class="intro"	
+$("p:first")			Selects the first <p> element	
+$("ul li:first")		Selects the first <li> element of the first <ul>	
+$("ul li:first-child")	Selects the first <li> element of every <ul>	
+$("[href]")			href 속성을 가진 모든 요소를 ​​선택합니다. // Selects all elements with an href attribute	
+$("a[target='_blank']")	대상 속성 값이 "_blank"인 모든 <a> 요소를 선택합니다. // Selects all <a> elements with a target attribute value equal to "_blank"	
+$("a[target!='_blank']")	Selects all <a> elements with a target attribute value NOT equal to "_blank"	
+$(":button")		모든 <button> 요소와 type = "button"요소를 선택합니다 //Selects all <button> elements and <input> elements of type="button"	
+$("tr:even")		모든 짝수<tr> 요소 //Selects all even <tr> elements	
+$("tr:odd")			모든 홀수<tr> 요소 //Selects all odd <tr> elements
+
+
+
+ㅇ 별도의 파일에 있는 함수 
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script src="__my_jquery_functions.js__"></script>
+</head>
+
+ㅇ 이벤트 
+click()			클릭했을때
+dbclick()			더블클릭했을때
+mousedown()		마우스를 누른상태
+muousup()			마우스를 뗀 상태
+hover()  // mouseup() + mouseleave() 두가지를 구현해놓은 것
+focus()			커서를 입력할때
+bluer()			커서가 사라졌을때
+on()				여러가지 이벤트를 동시에 
+
+
+
+ㅇ 이펙트 (효과)
+* 괄호안에 숫자를 넣으면 애니메이션 효과를 줄수 있다 ex) hide(1000), show(100), toggle(100)
+* hide() 	숨기기
+* show() 	보여주기
+* toggle() 	show와 hide의 기능이 하나로 
+
+* fadeIn()	fadeIn(); fadeIn("slow"), fadeIn(3000) fadeIn("fast") // 구문 $(selector).fadeIn(speed,callback); //콜백사용가능
+* fadeOut()										//  구문 $(selector).fadeOut(speed,callback);
+* fadeToggle()									//$(selector).fadeToggle(speed,callback);
+* fadeTo("show", 0.15);							//$(selector).fadeTo(speed,opacity,callback);
+
+* slideDown() 			// $(selector).slideDown(speed,callback);
+* slideUp() 				// $(selector).slideUp(speed,callback);
+* SlideTogle()			 // $(selector).slideToggle(speed,callback);
+
+*stop() 				//$(selector).stop(clearQueue, goToEnd)
+
+
+
