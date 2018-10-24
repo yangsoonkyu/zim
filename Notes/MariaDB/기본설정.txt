@@ -1,6 +1,5 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
-Creation-Date: 2018-10-18T22:43:43+09:00
 
 ====== 기본설정 ======
 Created 목요일 18 10월 2018
@@ -37,7 +36,4 @@ https://downloads.mariadb.org 에서 다운로드
 
 **ㅇ 테이블을 이미 만들었는데 한글오류가 날때** 쿼리문
 alter table 테이블명 convert to character set utf8;
-
-
-
 

@@ -58,7 +58,7 @@ on()				여러가지 이벤트를 동시에
 
 
 
-ㅇ 이펙트 (효과)
+==== ㅇ 이펙트 (효과) <더정리하기> ====
 * 괄호안에 숫자를 넣으면 애니메이션 효과를 줄수 있다 ex) hide(1000), show(100), toggle(100)
 * hide() 	숨기기
 * show() 	보여주기
@@ -73,7 +73,51 @@ on()				여러가지 이벤트를 동시에
 * slideUp() 				// $(selector).slideUp(speed,callback);
 * SlideTogle()			 // $(selector).slideToggle(speed,callback);
 
-*stop() 				//$(selector).stop(clearQueue, goToEnd)
+* Animate
+
+* stop() 				//$(selector).stop(clearQueue, goToEnd)
 
 
+
+* Callback
+* Chaining
+
+
+
+=== ㅇ HTML ===
+ 
+ㅇ Get 
+	* text()  	문자만	
+	* html()	html태그까지 함께
+	* val()	폼안의 값을 가져올때
+
+ㅇ Set
+	* text()	$("p").text("문자를 넣을수 있다") 		
+	* html()	$("p").html(<li>태그까지 함께 넣을수 있다.</li>);
+	* val()	$("#id").val("폼 안에 값을 넣어줄수 있다.")
+
+
+
+
+ㅇ Add : 새로운 콘텐츠 추가  				$("p").action("여기에추가")
+									  <p> text </p>
+	* append() 선택된 요소의 시작에 추가    	<p>여기에 추가 text</p>
+	* prepend() 선택된 요소의 끝에 추가 		<p>text 여기에 추가</p>
+	* before() 선택 요소의 앞에 추가			여기에추가<p> text</p>
+	* after() 선택요소의 뒤에 추가 			<p> text</p> 여기에추가
+
+
+==== ㅇCSS classes ====
+	* addClass()		선택요소에 클래스를 더한다
+	* removeClass()	선택 요소에 클래스를 지운다
+	* roggleClass()   addClass와 removeClass를 반복한다
+	* css()		직접 속성과 값을 지정할수 있다.
+		한가지를 적용할때 : $("p").css("color"__,__ "red");
+		여러개를 적용할때 : $("p").css({"color"__:__"red"__,__ "font-size"__:__"200%"});
+ 
+
+==== ㅇ Dimensions (크기와관련된) ====
+	* Element 	>	Padding		 > 	boder	  	> 	Margin  
+	* whidth()	>	innerWidth()	 >  	outerWidth() 	> 	outerWidth(true)
+	* height()	>	innerHeight()	 >	outerHeight()	>	outerHeight(true)
 
