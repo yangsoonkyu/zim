@@ -1,0 +1,86 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Ajax ======
+Created 목요일 25 10월 2018
+
+페이지를 다시 로드하지 않고 웹페이지를 업데이트
+서버에서 자료를 가져올수 있다. 
+
+__XMLHttpRequest 객체는 뒤에서 서버과 데이터를 교환하는데 사용. 전체 페이지를 다시로드하지 않고도 웹 페이지의 일부를 업데이트__
+구문 : var xhttp = new XMLHttpRequest();
+
+
+
+==== ㅇ XMLHttpRequest 객체 메소드 ====
+
+**Method**						Description
+**new XMLHttpRequest()**			Creates a new XMLHttpRequest object 			// 새 XMLHttpRequest 객체를 만듭니다.
+**abort()**						Cancels the current request 					// 현재 요청을 취소합니다.
+**getAllResponseHeaders()		**	Returns header information 					// 헤더 정보를 반환합니다.
+**getResponseHeader()**			Returns specific header information 			//특정 헤더 정보를 반환합니다
+**open(method,url,async,user,psw)**	Specifies the request						 //요청을 지정합니다. 
+								method: the request type GET or POST 		    //get 또는 post
+								url: the file location 						// 파일위치
+								async: true (asynchronous) or false (synchronous)    //true(동기화)&false(비동기화) 
+								user: optional user name 					//사용자
+								psw: optional password					 //암호
+**send()**						Sends the request to the server					//서버에 요청을 보냅니다
+							   Used for GET requests						//get 요청방식에 사용
+**send(string)				**	Sends the request to the server.					//서버에 요청을 보낸다
+							   Used for POST requests							//post요청 방식에 사용
+**setRequestHeader()**				Adds a label/value pair to the header to be sent  			//  () 송신하는 헤더에 label / value의 페어를 추가
+
+
+==== ㅇ XMLHttpRequest 객체 속성 ====
+
+**onreadystatechange** 				Defines a function to be called when the readyState property changes //상태가 바뀔때마다 실행이 된다
+**readyState**					Holds the status of the XMLHttpRequest. //상태를 표시한다
+								0: request not initialized  요청이 초기화되지 않았습니다
+								1: server connection established  서버연결상태입니다
+								2: request received  요청이 접수되었습니다
+								3: processing request 요청이 처리되었습니다
+								4: request finished and response is ready 요청이 완료되고 응답이 준비되엇습니다 
+**responseText**					Returns the response data as a string // 응답데이터를 문자열로 반환하니다
+**responseXML					**Returns the response data as XML data //응답데이터를 XML데이터로 반환합니다
+**status**						Returns the status-number of a request // 요청을 상태번호로 반환합니다.
+								200: 	"OK"
+								403: "Forbidden" //금지
+								404: "Not Found" //찾을수없음
+								For a complete list go to the Http Messages Reference //전체목록을 보려면 Http Messages Reference를 방문
+**statusText				**	Returns the status-text (e.g. "OK" or "Not Found")  상태메세지에 ok또는 찾을수 없음을 반환
+
+
+
+
+
+
+--------------------
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The XMLHttpRequest Object</h1>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="demo"></p>
+
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+	if (this.readyState == 4 && this.status == 200) {
+	  document.getElementById("demo").innerHTML = this.responseText;
+	}
+  };
+  xhttp.open("GET", "demo_get.asp", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
