@@ -44,5 +44,23 @@ create table board(id varchar(20),title varchar(200),text long varchar,created_d
 
 INSERT INTO board VALUES('user1','제목입니다','테스트 테스트 테스트 테스트 테스트','2018-10-18',null,null);
 
+--------------------
+
+Foreign Key 지정하기 
+ALTER TABLE playrex.rex_private COMMENT '개인정보';
+
+ALTER TABLE playrex.rex_private ADD CONSTRAINT FK_rex_private_worker_number_rex_member_worker_number FOREIGN KEY (worker_number)
+ REFERENCES playrex.rex_member (worker_number)  ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 
+CREATE TABLE rex_paricipant(
+	par_numb INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	par_eNumb INT NOT NULL,
+	CONSTRAINT FOREIGN KEY(par_eNumb) REFERENCES rex_management(worker_number) ON DELETE NO ACTION ON UPDATE CASCADE,
+	par_met INT NOT NULL,
+	CONSTRAINT FOREIGN KEY(par_met) REFERENCES rex_meeting(met_numb) ON DELETE NO ACTION ON UPDATE CASCADE
+);
+
+
+
+출처: http://araikuma.tistory.com/495 [프로그램 개발 지식 공유]
